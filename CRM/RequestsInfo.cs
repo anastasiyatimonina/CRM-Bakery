@@ -142,7 +142,8 @@ namespace CRM
             command2.ExecuteNonQuery();
             database.closeConnection();
             label8.Text = "Завершена";
-            MessageBox.Show("Заявка завершена!");
+			button1.Visible = false;
+			MessageBox.Show("Заявка завершена!");
         }
     }
 }

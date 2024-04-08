@@ -34,7 +34,18 @@ namespace CRM
 
         private void button2_Click(object sender, EventArgs e)
         {
+			var helper = new WordHelper("Отчет_по_продажам.doc");
 
-        }
-    }
+			string date1 = dateTimePicker2.Value.ToString("d");
+			string date2 = dateTimePicker3.Value.ToString("d");
+
+			helper.Process2(date1, date2);
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+            Statistics st = new Statistics();
+            st.Show();
+		}
+	}
 }

@@ -44,7 +44,13 @@ namespace CRM
             database.closeConnection();
 
             foreach (string[] s in data)
+            {
                 dataGridViewRequest.Rows.Add(s);
+                if ((Convert.ToDateTime(s[2]) - DateTime.Now).TotalDays <= 1)
+                {
+                    dataGridViewRequest.Rows[dataGridViewRequest.Rows.Count-1].DefaultCellStyle.BackColor = Color.Beige;
+                }
+            }
         }
 
         private void dataGridViewRequest_DoubleClick(object sender, EventArgs e)
